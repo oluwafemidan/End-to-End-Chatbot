@@ -1,12 +1,13 @@
+from dotenv import load_dotenv
+load_dotenv()  # Load environment variables from .env file
+
 import streamlit as st
 import os
 import google.generativeai as genai
 
 st.set_page_config(page_title="Q&A Demo")
 
-api_key = st.secrets["GOOGLE_API_KEY"]
-genai.configure(api_key=api_key)
-
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 model = genai.GenerativeModel("gemini-pro")
 chat = model.start_chat(history=[])
