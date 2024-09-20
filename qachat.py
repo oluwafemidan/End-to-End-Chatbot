@@ -1,5 +1,4 @@
 import streamlit as st
-import os
 import google.generativeai as genai
 
 st.set_page_config(page_title="Q&A Demo")
