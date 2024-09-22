@@ -2,6 +2,7 @@
 # Gemini Q&A Chatbot Project Overview
 ## Project Description
 The Gemini Q&A Chatbot project is a web-based application built using Streamlit, a Python library for creating interactive web applications. The application utilizes the Gemini Pro model, a conversational AI developed by Google, to provide users with a question-and-answer interface.
+try you the app [here](https://gemini-conversational-ai.streamlit.app/).
 
 ## Key Features
 - User Input: The application features a text input field where users can enter their questions or prompts.
