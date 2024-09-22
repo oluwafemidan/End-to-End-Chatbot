@@ -28,9 +28,15 @@ if submit and user_input:
         response = get_gemini_response(user_input)
         st.session_state['chat_history'].append(("You", user_input))
         st.subheader("The Response is")
+        
+        # Process the response chunks safely
         for chunk in response:
-            st.write(chunk.text)
-            st.session_state['chat_history'].append(("Bot", chunk.text))
+            if hasattr(chunk, 'text') and chunk.text:  # Check if 'text' exists
+                st.write(chunk.text)
+                st.session_state['chat_history'].append(("Bot", chunk.text))
+            else:
+                st.error("Sorry, I didn't get a proper response.")  # Handle missing text case
+
 
 st.subheader("The Chat history is")
 
